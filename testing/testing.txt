@@ -1,0 +1,33 @@
+Test part:
+This part mainly to test the source code, using the assert function to test whether the value have been initialize or assignment right. As for the test (1000) characters diaplay, I choose use the sampling check.
+
+How to test:
+command: make test
+         ./test
+
+Test functions:
+1.test open File:
+
+2.test state init: test the initialize of the state, newline on teletext page begins with white text, single height, black background, release graphics.
+
+3.test set mode: test whether after the set mode the state have been the right statement.
+
+4.test set background colour.
+
+5.test test set height mode.
+
+6.test set hode mode.
+
+7.test set Matrix State: Using the sampling check to test certain point state, test the set of front colour, back colour, dismode, heightmode, hold mode (m[18][31] is hold control after that control codes are instead displayed as copy of most recently graphices until meet the release control code).
+
+8.test read font file: m7fixed_data.h has all the hex data in the fnt file and this function is to check whether the read fnt file right.
+
+9.test read mode7 file: test_m7data.h has all the hex data in the mode7 file (1000 charactors) and this function is to check whether the read fnt file right.
+
+Bugs have been solved:
+1. SDL window flash back and show print only line by line bug
+2. only display with colour white and black
+3. also print the control code in a strange style
+4. double-height print two same line with single height
+5. hold graphics does not being reset to space(0xA0) after the change of display or height mode
+6. contiguous graphics cannot display the character correctly
